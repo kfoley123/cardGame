@@ -1,0 +1,27 @@
+
+.gameboard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+ 
+}
+
+.card{
+    background-color: rgb(243, 95, 95);
+    width: 24%;
+    margin-bottom: 2%;
+    position: relative;
+    padding-bottom: 10%;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 10%;
+
+
+    
+    
+
+}
+

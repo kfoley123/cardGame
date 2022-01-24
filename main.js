@@ -22,7 +22,7 @@ const gameboard = document.querySelector('.gameboard');
 console.log(gameboard);
 
 
-cards.forEach(cardItem => gameboard.innerHTML += `<div>${cardItem}</div>`);
+cards.forEach(cardItem => gameboard.innerHTML += `<div class="card">${cardItem}</div>`);
 //${} everything in this is a variable 
 
 

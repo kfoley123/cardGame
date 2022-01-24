@@ -25,7 +25,10 @@ console.log(gameboard);
 cards.forEach(cardItem => gameboard.innerHTML += `<div class="card">${cardItem}</div>`);
 //${} everything in this is a variable 
 
+const gameCards = document.querySelectorAll('.card')
+console.log(gameCards);
 
+gameCards.forEach(gameCard => gameCard.addEventListener('click', flipCard))
 
 function shuffle(array) {
     var m = array.length, t, i;
@@ -44,6 +47,12 @@ function shuffle(array) {
   
     return array;
   }
+
+function flipCard(){
+  alert("you clicked it")
+
+}
+
 
 
 

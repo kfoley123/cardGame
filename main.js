@@ -8,6 +8,12 @@
 //if not match return face down 
 //repeat until all cards are face up
 
+let firstCard = false; 
+let secondCard = false;
+
+let firstCardValue;
+
+
 
 let cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
 
@@ -25,10 +31,10 @@ console.log(gameboard);
 cards.forEach(cardItem => gameboard.innerHTML += `<div class="card">${cardItem}</div>`);
 //${} everything in this is a variable 
 
-const gameCards = document.querySelectorAll('.card')
+const gameCards = document.querySelectorAll('.card');
 console.log(gameCards);
 
-gameCards.forEach(gameCard => gameCard.addEventListener('click', flipCard))
+gameCards.forEach(gameCard => gameCard.addEventListener('click', flipCard));
 
 function shuffle(array) {
     var m = array.length, t, i;
@@ -49,10 +55,28 @@ function shuffle(array) {
   }
 
 function flipCard(){
-  alert("you clicked it")
+ 
+  console.log(this.innerHTML);
 
-  this.classList.add('selected')
+  this.classList.add('selected');
+  if(firstCard === false && secondCard === false){
+    firstCard = true;
+    firstCardValue = this.innerHTML;
+  }
+  else if(firstCard === true && secondCard === false){
+    secondCard = true;
 
+    if(this.innerHTML === firstCardValue){
+      alert("they match!")
+    }
+    
+    
+  }
+
+  else {
+    firstCard = false; 
+    secondCard = false ;
+  }
 
   //select & hilight card that is clicked on 
   //check if this is the first or second card flipped 

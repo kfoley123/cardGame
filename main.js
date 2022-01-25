@@ -51,6 +51,17 @@ function shuffle(array) {
 function flipCard(){
   alert("you clicked it")
 
+  this.classList.add('selected')
+
+
+  //select & hilight card that is clicked on 
+  //check if this is the first or second card flipped 
+  //if first card, keep it selected
+  //if second card, compare value of both cards and disable clicking more cards 
+  //if they are the same, both cards stay highlighted and can't be clicked again
+  //if cards are different both get unselected/highlighted 
+  //
+
 }
 
 

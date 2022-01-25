@@ -18,10 +18,11 @@
     font-size: 40px;
     text-align: center;
     padding-top: 10%;
-
-
-    
-    
-
 }
 
+.selected{
+    border-color: rgb(0, 17, 255);
+    border-radius: 15px;
+    border-width: 7px;
+    border-style: solid;
+}

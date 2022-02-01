@@ -17,11 +17,9 @@ let firstCardValue;
 
 let cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
 
-console.log(cards);
 
 cards = shuffle(cards);
 
-console.log(cards);
 
 const gameboard = document.querySelector('.gameboard');
 
@@ -37,7 +35,8 @@ console.log(gameCards);
 gameCards.forEach(gameCard => gameCard.addEventListener('click', flipCard));
 
 function shuffle(array) {
-    var m = array.length, t, i;
+    var m = array.length; 
+    var t, i;
   
     // While there remain elements to shuffle…
     while (m) {
@@ -55,19 +54,37 @@ function shuffle(array) {
   }
 
 function flipCard(){
+  if(secondCard === true) {
+    return;
+  }
  
   console.log(this.innerHTML);
 
   this.classList.add('selected');
   if(firstCard === false && secondCard === false){
     firstCard = true;
-    firstCardValue = this.innerHTML;
+    firstCardValue = this;
   }
   else if(firstCard === true && secondCard === false){
     secondCard = true;
+  
 
-    if(this.innerHTML === firstCardValue){
+    if(this.innerHTML === firstCardValue.innerHTML){
       alert("they match!")
+      firstCardValue = null;
+      firstCard = false; 
+      secondCard = false;
+    }
+
+    else{
+      
+      firstCard = false; 
+      secondCard = false;
+      console.log("second card", this);
+      console.log(firstCardValue);
+      firstCardValue.classList.toggle('selected');
+      this.classList.toggle('selected');
+      firstCardValue = null;
     }
     
     
@@ -78,15 +95,18 @@ function flipCard(){
     secondCard = false ;
   }
 
+}
   //select & hilight card that is clicked on 
   //check if this is the first or second card flipped 
   //if first card, keep it selected
-  //if second card, compare value of both cards and disable clicking more cards 
+  //if second card, compare value of both cards 
+  //and disable clicking more cards 
+
   //if they are the same, both cards stay highlighted and can't be clicked again
   //if cards are different both get unselected/highlighted 
   //
 
-}
+//remove bug that makes it correct to click same card twice 
 
 
 

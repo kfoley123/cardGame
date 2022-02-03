@@ -67,27 +67,26 @@ function flipCard(){
   }
   else if(firstCard === true && secondCard === false){
     secondCard = true;
+    //adds 1.5 second delay to the second card 
+    setTimeout( () => {
+      if(this.innerHTML === firstCardValue.innerHTML){
+        alert("they match!")
+        firstCardValue = null;
+        firstCard = false; 
+        secondCard = false;
+      }
   
-
-    if(this.innerHTML === firstCardValue.innerHTML){
-      alert("they match!")
-      firstCardValue = null;
-      firstCard = false; 
-      secondCard = false;
-    }
-
-    else{
-      
-      firstCard = false; 
-      secondCard = false;
-      console.log("second card", this);
-      console.log(firstCardValue);
-      firstCardValue.classList.toggle('selected');
-      this.classList.toggle('selected');
-      firstCardValue = null;
-    }
-    
-    
+      else{
+        
+        firstCard = false; 
+        secondCard = false;
+        console.log("second card", this);
+        console.log(firstCardValue);
+        firstCardValue.classList.toggle('selected');
+        this.classList.toggle('selected');
+        firstCardValue = null;
+      }
+    }, 1500)
   }
 
   else {
@@ -107,6 +106,7 @@ function flipCard(){
   //
 
 //remove bug that makes it correct to click same card twice 
+//add timer so you can see 2nd card clicked 
 
 
 

@@ -10,27 +10,17 @@
 
 let firstCard = false; 
 let secondCard = false;
-
 let firstCardValue;
-
-
-
 let cards = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
-
 
 cards = shuffle(cards);
 
-
 const gameboard = document.querySelector('.gameboard');
-
-console.log(gameboard);
-
 
 cards.forEach(cardItem => gameboard.innerHTML += `<div class="card">${cardItem}</div>`);
 //${} everything in this is a variable 
 
 const gameCards = document.querySelectorAll('.card');
-console.log(gameCards);
 
 gameCards.forEach(gameCard => gameCard.addEventListener('click', flipCard));
 
@@ -57,8 +47,6 @@ function flipCard(){
   if(secondCard === true) {
     return;
   }
- 
-  console.log(this.innerHTML);
 
   this.classList.add('selected');
   if(firstCard === false && secondCard === false){
@@ -80,8 +68,6 @@ function flipCard(){
         
         firstCard = false; 
         secondCard = false;
-        console.log("second card", this);
-        console.log(firstCardValue);
         firstCardValue.classList.toggle('selected');
         this.classList.toggle('selected');
         firstCardValue = null;

@@ -1,12 +1,14 @@
+body{
+    height:100vh;
+}
 
 .gameboard{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 750px;
+    width: 640px;
     margin-left: auto;
     margin-right: auto;
- 
 }
 
 .card{
@@ -25,6 +27,7 @@
     border-color: rgb(0, 17, 255);
     border-radius: 15px;
     border-width: 7px;
+    width:22%;
     border-style: solid;
     color:black;
 }

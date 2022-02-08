@@ -1,8 +1,8 @@
-body{
-    height:100vh;
+body {
+    height: 100vh;
 }
 
-.gameboard{
+.gameboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -11,7 +11,7 @@ body{
     margin-right: auto;
 }
 
-.card{
+.card {
     background-color: rgb(243, 95, 95);
     width: 24%;
     margin-bottom: 2%;
@@ -23,11 +23,11 @@ body{
     color: rgb(243, 95, 95);
 }
 
-.selected{
+.selected {
     border-color: rgb(0, 17, 255);
     border-radius: 15px;
     border-width: 7px;
-    width:22%;
+    width: 22%;
     border-style: solid;
-    color:black;
+    color: black;
 }
